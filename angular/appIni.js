@@ -1,4 +1,11 @@
-var App=angular.module('appIni',['ngNewRouter']);
+var App=angular.module('appIni',['ngRoute'])
+  .config(function($routeProvider,$locationProvider){
+    $routeProvider
+      .when("/unidad",{templateUrl:"views/maintenance/frmunidad.html"})
+      .when("categoria",{templateUrl:"views/maintenance/frmunidad.html"})
+      .when("/articulo",{templateUrl:"views/maintenance/frmunidad.html"})
+      //$locationProvider.html5Mode(true);
+  });
 // App.config(function($stateProvider,$urlServiceProvider){//,$urlRouteerProvider){
 //
 // $locationProvider.hashPrefix("!");
@@ -33,16 +40,29 @@ var App=angular.module('appIni',['ngNewRouter']);
 
 App.controller('adminPrincipal',function($scope,$location,$window,$router){
 
-  $router.config([
-      {
-        path:'unidad',
-        components:{
-          'uni':'./views/maintenance/frmunidad.html'
-        }
-      }
-
-  ])
+  // $router.config([
+  //     {
+  //       path:'unidad',
+  //       components:{
+  //         'uni':'./views/maintenance/frmunidad.html'
+  //       }
+  //     }
+  //
+  // ])
 });
+
+// App.$router.config(
+//   [
+//       {
+//         path:'unidad',
+//         components:{
+//           'uni':'./views/maintenance/frmunidad.html'
+//         }
+//       }
+//
+//   ]
+//
+// );
 // App.controller('controllerunidad',function($scope,$location,$window){
 //
 // });
